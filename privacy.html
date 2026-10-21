@@ -1,90 +1,132 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Политика конфиденциальности — приложения Artur F.</title>
+<title data-ru="Политика конфиденциальности — Arkeyn" data-en="Privacy policy — Arkeyn">Политика конфиденциальности — Arkeyn</title>
+<meta name="description" content="Политика конфиденциальности приложений Arkeyn: данные не собираются, доступа в интернет нет.">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('arkeyn-theme');
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var l = localStorage.getItem('arkeyn-lang') || 'ru';
+    var r = document.documentElement;
+    r.setAttribute('data-theme', t);
+    r.setAttribute('data-lang', l);
+    r.setAttribute('lang', l);
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
 
-  <a class="back" href="index.html">← Все приложения</a>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+        <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
+        <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
+        <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
+        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Arkeyn
+    </a>
+    <div class="spacer"></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 2.6v2.1M12 19.3v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
 
-  <h1>Политика конфиденциальности</h1>
-  <p class="sub">Приложения Artur F. для Android · дата вступления в силу: 20 октября 2026 г.</p>
+  <a class="back" href="index.html"><span data-ru>← Все приложения</span><span data-en>← All apps</span></a>
 
-  <div class="card">
-    <h2 style="margin-top:0">Коротко</h2>
-    <p>
-      Приложения не собирают, не хранят и не передают персональные данные. Они не имеют доступа
-      в интернет, не содержат рекламы, аналитики и сторонних SDK.
-    </p>
+  <section class="hero" style="margin-bottom:24px">
+    <h1 data-ru>Политика конфиденциальности</h1>
+    <h1 data-en>Privacy policy</h1>
+    <p data-ru>Последнее обновление: 16 октября 2026</p>
+    <p data-en>Last updated: 16 October 2026</p>
+  </section>
 
-    <h2>Какие данные обрабатываются</h2>
-    <p>Приложения работают только с файлами на вашем устройстве:</p>
-    <ul class="features">
-      <li><strong>Список файлов</strong> (имя, размер, дата изменения, разрешение изображения) —
-        читается для поиска дубликатов и не покидает устройство.</li>
-      <li><strong>Хеши содержимого</strong> (SHA-256 и перцептивные подписи изображений) —
-        вычисляются на устройстве и сохраняются в личной папке приложения, чтобы повторный
-        поиск шёл быстрее.</li>
-      <li><strong>Настройки</strong> (выбранные папки, порог схожести, типы файлов) — хранятся
-        локально.</li>
+  <section class="card prose">
+    <h2 data-ru>Коротко</h2>
+    <h2 data-en>In short</h2>
+    <p data-ru>Приложения Arkeyn не собирают персональные данные и не передают ничего наружу. У приложений нет разрешения <strong>INTERNET</strong> — операционная система физически не даёт им открыть сетевое соединение.</p>
+    <p data-en>Arkeyn apps collect no personal data and send nothing anywhere. They have no <strong>INTERNET</strong> permission — the operating system physically prevents them from opening a network connection.</p>
+
+    <h2 data-ru>Какие данные обрабатываются</h2>
+    <h2 data-en>What data is processed</h2>
+    <p data-ru>Только файлы на вашем устройстве, к которым вы сами дали доступ: имена, размеры, даты, хеши и уменьшенные копии для сравнения. Всё это обрабатывается и хранится на телефоне и никуда не отправляется.</p>
+    <p data-en>Only the files on your device that you granted access to: names, sizes, dates, hashes and downscaled copies used for comparison. Everything is processed and stored on the phone and never sent anywhere.</p>
+
+    <h2 data-ru>Разрешения</h2>
+    <h2 data-en>Permissions</h2>
+    <ul>
+      <li data-ru>Доступ к фото и видео — чтобы найти дубликаты и похожие снимки.</li>
+      <li data-en>Access to photos and videos — to find duplicates and lookalike shots.</li>
+      <li data-ru>Доступ к выбранным папкам через системный диалог — только те папки, которые вы указали.</li>
+      <li data-en>Access to selected folders via the system dialog — only the folders you picked.</li>
+      <li data-ru>Удаление файлов — только после системного подтверждения по каждому действию.</li>
+      <li data-en>File deletion — only after the system confirmation for each action.</li>
     </ul>
-    <p>
-      Ничего из этого не передаётся разработчику или третьим лицам: у приложений нет разрешения
-      <code>INTERNET</code>, поэтому передача технически невозможна.
-    </p>
 
-    <h2>Разрешения и зачем они</h2>
-    <table>
-      <tr><th>Разрешение</th><th>Назначение</th></tr>
-      <tr>
-        <td>Чтение фото и видео</td>
-        <td>поиск дубликатов среди изображений и видео</td>
-      </tr>
-      <tr>
-        <td>Доступ к выбранным фото (Android 14+)</td>
-        <td>работа с частичным доступом к галерее</td>
-      </tr>
-      <tr>
-        <td>Запись (только Android 10 и ниже)</td>
-        <td>удаление файлов на старых версиях системы</td>
-      </tr>
-    </table>
-    <p>
-      Доступ к остальным папкам предоставляется вами вручную через системный диалог выбора папки.
-      Доступ ко всей памяти (<code>MANAGE_EXTERNAL_STORAGE</code>) не используется.
-    </p>
+    <h2 data-ru>Передача третьим лицам</h2>
+    <h2 data-en>Sharing with third parties</h2>
+    <p data-ru>Нет. Данные не передаются ни разработчику, ни рекламным сетям, ни кому-либо ещё.</p>
+    <p data-en>None. Data is not shared with the developer, ad networks or anyone else.</p>
 
-    <h2>Удаление файлов</h2>
-    <p>
-      Удаляются только те файлы, которые вы отметили и подтвердили. Файлы галереи на Android 11
-      и выше удаляются через системный диалог — в корзину (с возможностью восстановления) или
-      навсегда. Файлы из папок, выбранных вручную, удаляются безвозвратно, о чём приложение
-      предупреждает в диалоге подтверждения.
-    </p>
+    <h2 data-ru>Аналитика, реклама, идентификаторы</h2>
+    <h2 data-en>Analytics, ads, identifiers</h2>
+    <p data-ru>Приложения не содержат рекламы, аналитики и трекеров, не запрашивают рекламный идентификатор и не создают профиль пользователя.</p>
+    <p data-en>The apps contain no ads, analytics or trackers, do not request an advertising ID and do not build a user profile.</p>
 
-    <h2>Донаты</h2>
-    <p>
-      Кнопки «Поддержать автора» открывают страницы Boosty и ЮMoney в браузере. Платёжные данные
-      вводятся на стороне этих сервисов и приложению недоступны; приложение лишь передаёт ссылку
-      браузеру.
-    </p>
+    <h2 data-ru>Хранение и удаление</h2>
+    <h2 data-en>Storage and deletion</h2>
+    <p data-ru>Настройки и кэш хранятся локально. Удаление приложения удаляет и их; отдельного удаления данных не требуется.</p>
+    <p data-en>Settings and cache are stored locally. Uninstalling the app removes them as well; no separate data deletion is needed.</p>
 
-    <h2>Дети</h2>
-    <p>Приложения не собирают данные и не содержат контента для взрослых; ограничений по возрасту нет.</p>
+    <h2 data-ru>Дети</h2>
+    <h2 data-en>Children</h2>
+    <p data-ru>Приложения не собирают данные ни о ком, включая детей, и не содержат функций, требующих возраста.</p>
+    <p data-en>The apps collect no data about anyone, including children, and contain no age-gated features.</p>
 
-    <h2>Изменения</h2>
-    <p>Актуальная версия публикуется по этому же адресу.</p>
+    <h2 data-ru>Изменения политики</h2>
+    <h2 data-en>Changes to this policy</h2>
+    <p data-ru>Если политика изменится, новая версия появится на этой странице с новой датой обновления.</p>
+    <p data-en>If this policy changes, the new version appears on this page with a new update date.</p>
 
-    <h2>Контакты</h2>
-    <p>По любым вопросам: <a href="https://boosty.to/arkeyn">страница автора на Boosty</a>.</p>
-  </div>
+    <h2 data-ru>Связь с автором</h2>
+    <h2 data-en>Contact</h2>
+    <p data-ru>Вопросы — через Boosty: <a href="https://boosty.to/arkeyn">boosty.to/arkeyn</a>.</p>
+    <p data-en>Questions — via Boosty: <a href="https://boosty.to/arkeyn">boosty.to/arkeyn</a>.</p>
+  </section>
 
-  <footer>© 2026 Artur F. · <a href="index.html">Все приложения</a></footer>
+  <footer>
+    <span>© 2026 Arkeyn</span>
+    <span>·</span>
+    <a href="index.html"><span data-ru>Все приложения</span><span data-en>All apps</span></a>
+    <span>·</span>
+    <a href="https://boosty.to/arkeyn">Boosty</a>
+    <span>·</span>
+    <a href="https://github.com/Arkeyn87/arkeyn-apps">GitHub</a>
+  </footer>
 
 </div>
+<script src="site.js"></script>
 </body>
 </html>

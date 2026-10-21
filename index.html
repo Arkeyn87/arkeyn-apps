@@ -1,66 +1,157 @@
 <!DOCTYPE html>
-<!--
-  Главная страница — каталог приложений.
-
-  Как добавить приложение: скопируйте ссылку <a class="card app-item"> (см. комментарий
-  в блоке «Приложения») и замените иконку, название, описание, характеристики и адрес
-  страницы приложения (например scaner.html).
--->
-<html lang="ru">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Artur F. — приложения для Android</title>
-<meta name="description" content="Приложения для Android без рекламы, аналитики и доступа в интернет.">
+<title data-ru="Arkeyn — приложения для Android" data-en="Arkeyn — Android apps">Arkeyn — приложения для Android</title>
+<meta name="description" content="Приложения для Android без рекламы, аналитики и доступа в интернет. Автор — Arkeyn.">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
+<script>
+/* Тема и язык применяются до первой отрисовки — без мигания. */
+(function () {
+  try {
+    var t = localStorage.getItem('arkeyn-theme');
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var l = localStorage.getItem('arkeyn-lang') || 'ru';
+    var r = document.documentElement;
+    r.setAttribute('data-theme', t);
+    r.setAttribute('data-lang', l);
+    r.setAttribute('lang', l);
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>Artur F.</h1>
-  <p class="sub">Приложения для Android. Без рекламы, без аналитики, без доступа в интернет.</p>
-
-  <!-- ================= Приложения ================= -->
-  <div class="card">
-    <h2>Приложения</h2>
-
-    <!-- КАРТОЧКА В КАТАЛОГЕ: копируйте этот блок для нового приложения -->
-    <a class="card app-item" href="dupfinder.html" style="margin-bottom:0">
-      <svg width="56" height="56" viewBox="0 0 108 108" aria-hidden="true">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
         <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
         <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
         <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
-        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3"
-              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <div>
-        <div class="title">Дубликаты и похожие фото</div>
-        <div class="desc">Находит одинаковые файлы и похожие снимки</div>
-        <div class="meta">версия 1.9 · 7,0 МБ · Android 8.0+</div>
-      </div>
-      <span class="more">Подробнее →</span>
+      Arkeyn
     </a>
-    <!-- /КАРТОЧКА В КАТАЛОГЕ -->
+    <div class="spacer"></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 2.6v2.1M12 19.3v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
 
+  <section class="hero">
+    <h1>Arkeyn</h1>
+    <p data-ru>Приложения для Android. Без рекламы, без аналитики, без доступа в интернет.</p>
+    <p data-en>Android apps. No ads, no analytics, no internet access.</p>
+  </section>
+
+  <p class="eyebrow" data-ru>Приложения</p>
+  <p class="eyebrow" data-en>Apps</p>
+
+  <section class="card app">
+    <svg class="icon" viewBox="0 0 108 108" aria-hidden="true">
+      <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
+      <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
+      <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
+      <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="grow">
+      <h2 data-ru>Дубликаты и похожие фото</h2>
+      <h2 data-en>Duplicates and similar photos</h2>
+      <p class="role" data-ru>Поиск одинаковых файлов и похожих снимков</p>
+      <p class="role" data-en>Finds identical files and lookalike shots</p>
+
+      <ul class="chips">
+        <li data-ru>версия 1.10</li>
+        <li data-en>version 1.10</li>
+        <li data-ru>7,0 МБ</li>
+        <li data-en>7.0 MB</li>
+        <li>Android 8.0+</li>
+        <li data-ru>без интернета</li>
+        <li data-en>no internet</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn" href="https://github.com/Arkeyn87/arkeyn-apps/releases/latest/download/DuplicatesFinder.apk">
+          <span data-ru>Скачать APK</span><span data-en>Download APK</span>
+        </a>
+        <a class="btn ghost" href="dupfinder.html">
+          <span data-ru>Подробнее</span><span data-en>Details</span>
+        </a>
+      </div>
+
+      <p class="meta">
+        <span data-ru>Установка вручную: откройте файл на телефоне и разрешите установку из этого источника.
+          Подписано ключом Arkeyn — при обновлении данные сохранятся.</span>
+        <span data-en>Manual install: open the file on your phone and allow installation from this source.
+          Signed with the Arkeyn key — your data survives updates.</span>
+        <span class="hash">SHA-256: 9A225CE6AAFE3BEF7DAA593AB4A3FFDFE2231287482B3EB0083F29352DC9D840</span>
+      </p>
+    </div>
+  </section>
+
+  <p class="eyebrow" data-ru>Как я делаю приложения</p>
+  <p class="eyebrow" data-en>How I build apps</p>
+
+  <div class="tiles">
+    <div class="tile">
+      <h3 data-ru>Нет доступа в интернет</h3>
+      <h3 data-en>No internet access</h3>
+      <p data-ru>В приложении нет разрешения INTERNET: отправить данные наружу оно физически не может.</p>
+      <p data-en>The app has no INTERNET permission: it physically cannot send data anywhere.</p>
+    </div>
+    <div class="tile">
+      <h3 data-ru>Без рекламы и слежки</h3>
+      <h3 data-en>No ads or tracking</h3>
+      <p data-ru>Ни баннеров, ни платных функций, ни сбора статистики.</p>
+      <p data-en>No banners, no paid features, no telemetry.</p>
+    </div>
+    <div class="tile">
+      <h3 data-ru>Обновления поверх</h3>
+      <h3 data-en>Updates in place</h3>
+      <p data-ru>Новая версия ставится на старую: настройки и данные сохраняются.</p>
+      <p data-en>A new version installs over the old one: settings and data stay.</p>
+    </div>
   </div>
 
-  <!-- ================= Поддержать ================= -->
-  <div class="card">
-    <h2>Поддержать автора</h2>
-    <p style="margin-top:0;color:var(--muted)">
-      Приложения бесплатные, без рекламы и подписок. Если пригодилось — можно угостить автора кофе.
-    </p>
+  <section class="card" style="margin-top:18px">
+    <h3 data-ru>Поддержать автора</h3>
+    <h3 data-en>Support the author</h3>
+    <p class="meta" style="margin:0 0 16px" data-ru>Приложения бесплатные, без рекламы и подписок. Если пригодилось — можно угостить автора кофе.</p>
+    <p class="meta" style="margin:0 0 16px" data-en>All apps are free, with no ads or subscriptions. If they helped, you can buy the author a coffee.</p>
     <div class="actions">
       <a class="btn" href="https://boosty.to/arkeyn/donate">Boosty</a>
       <a class="btn ghost" href="https://yoomoney.ru/to/4100119662312495">ЮMoney</a>
     </div>
-  </div>
+  </section>
 
   <footer>
-    © 2026 Artur F. · <a href="privacy.html">Политика конфиденциальности</a> ·
+    <span>© 2026 Arkeyn</span>
+    <span>·</span>
+    <a href="privacy.html"><span data-ru>Политика конфиденциальности</span><span data-en>Privacy policy</span></a>
+    <span>·</span>
     <a href="https://boosty.to/arkeyn">Boosty</a>
+    <span>·</span>
+    <a href="https://github.com/Arkeyn87/arkeyn-apps">GitHub</a>
   </footer>
 
 </div>
+<script src="site.js"></script>
 </body>
 </html>

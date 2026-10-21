@@ -1,97 +1,197 @@
 <!DOCTYPE html>
-<!--
-  Страница приложения «Дубликаты и похожие фото».
-
-  При выпуске новой версии меняются три места:
-    1) тег в ссылке на скачивание (dupfinder-1.9 → dupfinder-1.10);
-    2) характеристики: версия и размер;
-    3) строка SHA-256.
-
-  APK лежит в Releases, поэтому ссылка содержит тег релиза.
--->
-<html lang="ru">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Дубликаты и похожие фото — Artur F.</title>
-<meta name="description" content="Находит одинаковые файлы и похожие фотографии на Android. Без рекламы и без доступа в интернет.">
+<title data-ru="Дубликаты и похожие фото — Arkeyn" data-en="Duplicates and similar photos — Arkeyn">Дубликаты и похожие фото — Arkeyn</title>
+<meta name="description" content="Приложение для Android: находит одинаковые файлы и похожие фотографии. Без интернета, без рекламы.">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('arkeyn-theme');
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var l = localStorage.getItem('arkeyn-lang') || 'ru';
+    var r = document.documentElement;
+    r.setAttribute('data-theme', t);
+    r.setAttribute('data-lang', l);
+    r.setAttribute('lang', l);
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
 
-  <a class="back" href="index.html">← Все приложения</a>
-
-  <div class="card">
-    <div class="app-head">
-      <svg width="64" height="64" viewBox="0 0 108 108" aria-hidden="true">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
         <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
         <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
         <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
-        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3"
-              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <div>
-        <h2>Дубликаты и похожие фото</h2>
-        <div class="role">Поиск одинаковых файлов и похожих снимков</div>
+      Arkeyn
+    </a>
+    <div class="spacer"></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 2.6v2.1M12 19.3v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
+  </header>
 
-    <p>
-      Находит точные копии любых файлов и похожие фотографии, показывает, сколько места можно
-      освободить, и умеет сам расставить галочки: что оставить, а что удалить.
-    </p>
+  <a class="back" href="index.html"><span data-ru>← Все приложения</span><span data-en>← All apps</span></a>
 
-    <ul class="chips">
-      <li>версия 1.9</li>
-      <li>7,0 МБ</li>
-      <li>Android 8.0 и новее</li>
-      <li>без интернета</li>
-    </ul>
+  <section class="card app">
+    <svg class="icon" viewBox="0 0 108 108" aria-hidden="true">
+      <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
+      <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
+      <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
+      <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="grow">
+      <h1 style="margin:0 0 4px;font-size:21px;letter-spacing:-.01em" data-ru>Дубликаты и похожие фото</h1>
+      <h1 style="margin:0 0 4px;font-size:21px;letter-spacing:-.01em" data-en>Duplicates and similar photos</h1>
+      <p class="role" data-ru>Поиск одинаковых файлов и похожих снимков</p>
+      <p class="role" data-en>Finds identical files and lookalike shots</p>
 
-    <div class="actions">
-      <a class="btn" href="https://github.com/Arkeyn87/arkeyn-apps/releases/download/dupfinder-1.9/DuplicatesFinder.apk">
-        Скачать APK
-      </a>
-      <a class="btn ghost" href="https://boosty.to/arkeyn">
-        Что нового
-      </a>
+      <ul class="chips">
+        <li data-ru>версия 1.10</li>
+        <li data-en>version 1.10</li>
+        <li data-ru>7,0 МБ</li>
+        <li data-en>7.0 MB</li>
+        <li>Android 8.0+</li>
+        <li data-ru>без интернета</li>
+        <li data-en>no internet</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn" href="https://github.com/Arkeyn87/arkeyn-apps/releases/latest/download/DuplicatesFinder.apk">
+          <span data-ru>Скачать APK</span><span data-en>Download APK</span>
+        </a>
+        <a class="btn ghost" href="https://github.com/Arkeyn87/arkeyn-apps/releases">
+          <span data-ru>Все версии</span><span data-en>All versions</span>
+        </a>
+      </div>
+
+      <p class="meta">
+        <span data-ru>Ссылка постоянная: GitHub всегда отдаёт последнюю версию. Подписано ключом Arkeyn.</span>
+        <span data-en>The link is permanent: GitHub always serves the latest release. Signed with the Arkeyn key.</span>
+        <span class="hash">SHA-256: 9A225CE6AAFE3BEF7DAA593AB4A3FFDFE2231287482B3EB0083F29352DC9D840</span>
+      </p>
     </div>
+  </section>
 
-    <span class="hash">SHA-256: F62D50FD350300185D994BD3FC87D6F9D2856668413F2F940B7556E0783046DD</span>
-    <p class="note">
-      Установка вручную: откройте файл на телефоне и разрешите установку из этого источника.
-      Приложение подписано ключом Artur F. — при обновлении данные сохранятся.
-    </p>
-  </div>
+  <section class="card">
+    <h3 data-ru>Как установить</h3>
+    <h3 data-en>How to install</h3>
+    <ol class="steps">
+      <li>
+        <span data-ru><b>Скачайте APK</b> и откройте файл на телефоне.</span>
+        <span data-en><b>Download the APK</b> and open the file on your phone.</span>
+      </li>
+      <li>
+        <span data-ru><b>Разрешите установку</b> из этого источника, если система спросит.</span>
+        <span data-en><b>Allow installation</b> from this source if the system asks.</span>
+      </li>
+      <li>
+        <span data-ru><b>Выберите папки</b> для поиска — приложение дальше всё сделает само.</span>
+        <span data-en><b>Pick the folders</b> to scan — the app does the rest on its own.</span>
+      </li>
+    </ol>
+  </section>
 
-  <div class="card">
-    <h2>Что умеет</h2>
+  <section class="card">
+    <h3 data-ru>Что умеет</h3>
+    <h3 data-en>What it does</h3>
     <ul class="features">
-      <li>Точные дубликаты любых файлов: фото, видео, документы, музыка, архивы.</li>
-      <li>Похожие снимки в разном сжатии, размере и качестве.</li>
-      <li>Автовыбор по критерию: оставить самый большой, самый детальный, самый новый и другие.</li>
-      <li>Ручная правка, защита файла от удаления, удаление в корзину или навсегда.</li>
-      <li>Просмотр с увеличением, превью видео, кэш хешей для быстрого повторного поиска.</li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Точные дубликаты.</b> Сравнение по размеру, затем частичный хеш, затем SHA-256 — совпадение байт в байт.</span>
+        <span data-en><b>Exact duplicates.</b> Compared by size, then a partial hash, then SHA-256 — a byte-for-byte match.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Похожие снимки.</b> Перцептивные хеши dHash и aHash находят копию после сжатия, уменьшения или смены яркости.</span>
+        <span data-en><b>Lookalike shots.</b> dHash and aHash perceptual hashes find a copy after recompression, resizing or brightness changes.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Что оставить.</b> 10 стратегий: лучшее качество, самый старый файл, самый короткий путь и другие.</span>
+        <span data-en><b>What to keep.</b> 10 strategies: best quality, oldest file, shortest path and more.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Группы и объём.</b> Видно, сколько места освободится; выбрать все файлы группы сразу нельзя — защита от ошибки.</span>
+        <span data-en><b>Groups and space.</b> You see how much space you can reclaim; selecting a whole group at once is blocked to prevent mistakes.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Просмотр.</b> Полноэкранный просмотр с зумом, свайпами и закрытием жестом сверху вниз.</span>
+        <span data-en><b>Viewer.</b> Full-screen view with zoom, swipes and swipe-down to close.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Видео.</b> Превью для видео прямо в списке.</span>
+        <span data-en><b>Videos.</b> Thumbnails for videos right in the list.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Папки и фильтры.</b> Выбор папок через системный диалог, фильтры по типам файлов.</span>
+        <span data-en><b>Folders and filters.</b> Folder picker via the system dialog, filters by file type.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Удаление с подтверждением.</b> Файлы удаляются только после системного запроса.</span>
+        <span data-en><b>Deletion with confirmation.</b> Files are removed only after the system prompt.</span>
+      </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>Поддержать автора</h2>
-    <p style="margin-top:0;color:var(--muted)">
-      Приложение бесплатное, без рекламы и подписок. Если пригодилось — можно угостить автора кофе.
-    </p>
+  <section class="card">
+    <h3 data-ru>Приватность</h3>
+    <h3 data-en>Privacy</h3>
+    <p class="meta" style="margin:0 0 10px" data-ru>В приложении нет разрешения INTERNET: оно не может ничего отправить. Все вычисления — на телефоне, настройки хранятся локально.</p>
+    <p class="meta" style="margin:0 0 10px" data-en>The app has no INTERNET permission: it cannot send anything. All processing happens on the phone, settings stay local.</p>
+    <a href="privacy.html"><span data-ru>Политика конфиденциальности</span><span data-en>Privacy policy</span></a>
+  </section>
+
+  <section class="card">
+    <h3 data-ru>Поддержать автора</h3>
+    <h3 data-en>Support the author</h3>
+    <p class="meta" style="margin:0 0 16px" data-ru>Приложение бесплатное, без рекламы и подписок. Если пригодилось — можно угостить автора кофе.</p>
+    <p class="meta" style="margin:0 0 16px" data-en>The app is free, with no ads or subscriptions. If it helped, you can buy the author a coffee.</p>
     <div class="actions">
       <a class="btn" href="https://boosty.to/arkeyn/donate">Boosty</a>
       <a class="btn ghost" href="https://yoomoney.ru/to/4100119662312495">ЮMoney</a>
     </div>
-  </div>
+  </section>
 
   <footer>
-    © 2026 Artur F. · <a href="index.html">Все приложения</a> ·
-    <a href="privacy.html">Политика конфиденциальности</a>
+    <span>© 2026 Arkeyn</span>
+    <span>·</span>
+    <a href="privacy.html"><span data-ru>Политика конфиденциальности</span><span data-en>Privacy policy</span></a>
+    <span>·</span>
+    <a href="https://boosty.to/arkeyn">Boosty</a>
+    <span>·</span>
+    <a href="https://github.com/Arkeyn87/arkeyn-apps">GitHub</a>
   </footer>
 
 </div>
+<script src="site.js"></script>
 </body>
 </html>
