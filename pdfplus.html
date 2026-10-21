@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF+ — просмотр PDF без интернета | Arkeyn</title>
+<meta name="description" content="PDF+: просмотр PDF на телефоне без интернета и без разрешений. Открывает файлы из почты и мессенджеров, увеличение, переход к странице. Автор — Arkeyn.">
+<link rel="canonical" href="https://arkeyn87.github.io/arkeyn-apps/pdfplus.html">
+<link rel="icon" href="icon-512.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkeyn">
+<meta property="og:title" content="PDF+ — просмотр PDF без интернета">
+<meta property="og:description" content="Просмотр PDF на телефоне. Без интернета и без рекламы.">
+<meta property="og:url" content="https://arkeyn87.github.io/arkeyn-apps/pdfplus.html">
+<meta property="og:image" content="https://arkeyn87.github.io/arkeyn-apps/icon-512.png">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PDF+ — просмотр PDF без интернета">
+<meta name="twitter:description" content="Просмотр PDF на телефоне. Без интернета и без рекламы.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PDF+",
+  "alternateName": "PDF+ — просмотр PDF без интернета",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Android 8.0 и новее",
+  "softwareVersion": "1.0",
+  "inLanguage": ["ru", "en"],
+  "description": "Просмотр PDF на телефоне без интернета и без разрешений.",
+  "downloadUrl": "https://github.com/Arkeyn87/pdfplus/releases/latest/download/PdfPlus.apk",
+  "installUrl": "https://arkeyn87.github.io/arkeyn-apps/pdfplus.html",
+  "author": { "@type": "Person", "name": "Arkeyn", "url": "https://boosty.to/arkeyn" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+}
+</script>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('arkeyn-theme');
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var l = localStorage.getItem('arkeyn-lang') || 'ru';
+    var r = document.documentElement;
+    r.setAttribute('data-theme', t);
+    r.setAttribute('data-lang', l);
+    r.setAttribute('lang', l);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+        <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
+        <rect x="33" y="30" width="32" height="38" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="4.3"/>
+        <rect x="48" y="43" width="32" height="37" rx="5" fill="#ffffff"/>
+        <path d="M53 61 L59 68 L71 54" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Arkeyn
+    </a>
+    <div class="spacer"></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 2.6v2.1M12 19.3v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <a class="back" href="index.html"><span data-ru>← Все приложения</span><span data-en>← All apps</span></a>
+
+  <section class="card app">
+    <!-- Значок PDF+: лист документа на синем фоне Arkeyn -->
+    <svg class="icon" viewBox="0 0 108 108" aria-hidden="true">
+      <rect width="108" height="108" rx="24" fill="#1b4fa8"/>
+      <path d="M38 24h24l14 14v42a5 5 0 0 1-5 5H38a5 5 0 0 1-5-5V29a5 5 0 0 1 5-5z" fill="#ffffff"/>
+      <path d="M62 24l14 14H62z" fill="#1b4fa8"/>
+      <path d="M43 50h18M43 58h24M43 66h12" fill="none" stroke="#1b4fa8" stroke-width="4.3" stroke-linecap="round"/>
+    </svg>
+    <div class="grow">
+      <h1 style="margin:0 0 4px;font-size:21px;letter-spacing:-.01em" data-ru>PDF+ — просмотр PDF без интернета</h1>
+      <h1 style="margin:0 0 4px;font-size:21px;letter-spacing:-.01em" data-en>PDF+ — read PDFs offline</h1>
+      <p class="role" data-ru>просмотр PDF на телефоне, без интернета и без разрешений</p>
+      <p class="role" data-en>view PDF files on your phone, offline and without permissions</p>
+
+      <ul class="chips">
+        <li data-ru>версия 1.0</li>
+        <li data-en>version 1.0</li>
+        <li data-ru>6,2 МБ</li>
+        <li data-en>6.2 MB</li>
+        <li>Android 8.0+</li>
+        <li data-ru>без интернета</li>
+        <li data-en>no internet</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn" href="https://github.com/Arkeyn87/pdfplus/releases/latest/download/PdfPlus.apk">
+          <span data-ru>Скачать APK</span><span data-en>Download APK</span>
+        </a>
+        <a class="btn ghost" href="https://github.com/Arkeyn87/pdfplus/releases">
+          <span data-ru>Все версии</span><span data-en>All versions</span>
+        </a>
+      </div>
+
+      <p class="meta">
+        <span data-ru>Ссылка постоянная: GitHub всегда отдаёт последнюю версию. Подписано ключом Arkeyn.</span>
+        <span data-en>The link is permanent: GitHub always serves the latest release. Signed with the Arkeyn key.</span>
+        <span class="hash">SHA-256: EED207F4B39AF9EC394A50810A0A5A60F558B99F819E304C504C420A7D86B506</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 data-ru>Как установить</h3>
+    <h3 data-en>How to install</h3>
+    <ol class="steps">
+      <li>
+        <span data-ru><b>Скачайте APK</b> и откройте файл на телефоне.</span>
+        <span data-en><b>Download the APK</b> and open the file on your phone.</span>
+      </li>
+      <li>
+        <span data-ru><b>Разрешите установку</b> из этого источника, если система спросит.</span>
+        <span data-en><b>Allow installation</b> from this source if the system asks.</span>
+      </li>
+      <li>
+        <span data-ru><b>Откройте приложение</b> и выберите файл кнопкой «Открыть PDF».</span>
+        <span data-en><b>Open the app</b> and pick a file with the “Open PDF” button.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h3 data-ru>Что умеет</h3>
+    <h3 data-en>What it does</h3>
+    <ul class="features">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Открывает PDF откуда угодно.</b> Файл из файлового менеджера, почты или мессенджера открывается в PDF+ — приложение можно назначить обработчиком по умолчанию.</span>
+        <span data-en><b>Opens PDFs from anywhere.</b> A file from a file manager, mail or a messenger opens in PDF+ — you can set it as the default handler.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Видно, где вы в документе.</b> Страницы идут подряд, счётчик показывает «3 / 24», а к нужному номеру можно перейти сразу.</span>
+        <span data-en><b>You always know where you are.</b> Pages flow one after another, the counter shows “3 / 24”, and you can jump straight to a page number.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Мелкий текст читается.</b> Увеличение двойным касанием и пинчем, полноэкранный режим со свайпом между страницами.</span>
+        <span data-en><b>Small print stays readable.</b> Zoom with a double tap or pinch, a full-screen mode with swiping between pages.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-ru><b>Ничего не просит.</b> Файл выбирается системным диалогом: у приложения нет ни одного разрешения и нет доступа в интернет.</span>
+        <span data-en><b>Asks for nothing.</b> Files come from the system picker: the app has no permissions at all and no internet access.</span>
+      </li>
+    </ul>
+    <p class="meta" style="margin:14px 0 0" data-ru>Пока это только просмотр. Инструменты над страницами — поворот, удаление, объединение — в следующих версиях.</p>
+    <p class="meta" style="margin:14px 0 0" data-en>For now this is viewing only. Page tools — rotate, delete, merge — are coming in later versions.</p>
+  </section>
+
+  <section class="card">
+    <h3 data-ru>Приватность</h3>
+    <h3 data-en>Privacy</h3>
+    <p class="meta" style="margin:0 0 10px" data-ru>В приложении нет разрешения INTERNET: оно не может ничего отправить. Документы не покидают телефон, настройки хранятся локально.</p>
+    <p class="meta" style="margin:0 0 10px" data-en>The app has no INTERNET permission: it cannot send anything. Documents never leave your phone, settings stay local.</p>
+    <a href="privacy.html"><span data-ru>Политика конфиденциальности</span><span data-en>Privacy policy</span></a>
+  </section>
+
+  <section class="card">
+    <h3 data-ru>Поддержать автора</h3>
+    <h3 data-en>Support the author</h3>
+    <p class="meta" style="margin:0 0 16px" data-ru>Приложение бесплатное, без рекламы и подписок. Если пригодилось — можно угостить автора кофе.</p>
+    <p class="meta" style="margin:0 0 16px" data-en>The app is free, with no ads or subscriptions. If it helped, you can buy the author a coffee.</p>
+    <div class="actions">
+      <a class="btn" href="https://boosty.to/arkeyn/donate">Boosty</a>
+      <a class="btn ghost" href="https://yoomoney.ru/to/4100119662312495">ЮMoney</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Arkeyn</span>
+    <span>·</span>
+    <a href="privacy.html"><span data-ru>Политика конфиденциальности</span><span data-en>Privacy policy</span></a>
+    <span>·</span>
+    <a href="https://boosty.to/arkeyn">Boosty</a>
+    <span>·</span>
+    <a href="https://github.com/Arkeyn87/arkeyn-apps">GitHub</a>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>
